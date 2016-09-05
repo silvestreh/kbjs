@@ -1,0 +1,12 @@
+{
+    "host": "localhost",
+    "port": 3030,
+    "mongodb": "mongodb://localhost:27017/kbjs",
+    "public": "../public/",
+    "auth": {
+        "token": {
+            "secret": "z3cr3t"
+        },
+        "local": {}
+    }
+}

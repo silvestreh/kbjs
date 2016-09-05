@@ -1,0 +1,12 @@
+<section>
+    <ul class="toolbar">
+        <li class="toolbar__item toolbar__item--left"><a v-link="{ path: '/app/questions' }"><img src="/static/svg/arrow-left.svg" alt="Go back" class="toolbar__item__icon"></a></li>
+        <li class="toolbar__title"><input type="text" v-model="formData.question[lang]" placeholder="Question title"></li>
+        <li class="toolbar__item" v-if="!formData.draft"><a href="#" @click.prevent="unPublish" class="button">Un-publish</a></li>
+        <li class="toolbar__item"><a href="#" @click.prevent="save" class="button" :class="{ 'button--key': !formData.draft }">Save</a></li>
+        <li class="toolbar__item" v-if="formData.draft"><a href="#" @click.prevent="publish" class="button button--key">Publish</a></li>
+        <li class="toolbar__item"><a href="#" @click.prevent="showCategories"><img src="/static/svg/settings.svg" alt="Settings" class="toolbar__item__icon"></a></li>
+    </ul>
+    <markdown-editor :model.sync="formData.answer[lang]" :title.sync="formData.question[lang]"></markdown-editor>
+    <categories-editor categories-for="question" :show.sync="displayCategories" :selected.sync="formData.categories"></categories-editor>
+</section>

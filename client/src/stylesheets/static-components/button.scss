@@ -1,0 +1,72 @@
+@import 'src/stylesheets/modules/colors';
+
+.button, button {
+    display: inline-block;
+    line-height: 2.75rem;
+    height: 3rem;
+    padding: 0 1.25rem;
+    box-sizing: border-box;
+    color: $color-accent;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: width 250ms, border-radius 250ms, background-color 250ms;
+    text: {
+        transform: uppercase;
+        decoration: none;
+    }
+    font: {
+        size: 1rem;
+        weight: 600;
+        stretch: condensed;
+    }
+    border: {
+        width: 0.125rem;
+        style: solid;
+        background-color: transparent;
+        color: $color-accent;
+        radius: 1.5rem;
+    }
+
+    &--key {
+        background-color: $color-accent;
+        color: white;
+        border-color: transparent;
+
+        &:focus, &:hover {
+            background-color: lighten($color-accent, 5%);
+        }
+    }
+
+    &--fab {
+        width: 2.5rem;
+        height: 2.5rem;
+        vertical-align: middle;
+        text-align: center;
+        padding: 0;
+        line-height: 2.5rem;
+
+        img {
+            width: 1rem;
+            height: 1rem;
+            display: inline-block;
+            margin: auto;
+        }
+    }
+
+    &--loading {
+        color: transparent;
+        background-color: transparent;
+        width: 3rem;
+        border-radius: 50%;
+        border-width: 0.25rem;
+        border-color: lighten($color-main-light, 20%);
+        border-left-color: $color-accent;
+        animation: spin 1s linear infinite;
+        pointer-events: none;
+    }
+
+    &:focus, &:hover {
+        border-color: lighten($color-accent, 5%);
+    }
+}

@@ -1,0 +1,51 @@
+@import '~animate.css';
+
+.auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 4rem);
+
+    fieldset {
+        width: 20rem;
+        text-align: center;
+
+        ul li + li {
+            margin: 0;
+        }
+    }
+
+    legend {
+        float: left;
+        width: 100%;
+        clear: both;
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    img {
+        @extend .animated;
+        @extend .zoomIn;
+        max-width: 10rem;
+        display: block;
+        margin: auto;
+        animation-duration: 350ms;
+    }
+
+    input:not([type="radio"]):not([type="button"]):not([type="checkbox"]):not([type="range"]):not([type="file"]) {
+        line-height: 2rem;
+
+        &.email {
+            border-bottom: none;
+            border-radius: 0.5rem;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &.password {
+            border-radius: 0.5rem;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+    }
+}

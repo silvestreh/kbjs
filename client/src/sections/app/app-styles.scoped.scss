@@ -1,0 +1,16 @@
+@import 'src/stylesheets/modules/colors';
+
+button {
+    float: right;
+}
+
+section::before {
+    content: '';
+    background-color: lighten(desaturate($color-accent, 15%), 42%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 7rem;
+    height: 100%;
+    z-index: -1;
+}

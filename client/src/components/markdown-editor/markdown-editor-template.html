@@ -1,0 +1,20 @@
+<div class="editor">
+    <ul class="editor-toolbar">
+        <li class="editor-toolbar__item"><a href="#" @click.prevent="makeBold"><img src="/static/svg/edit-bold.svg" alt="Bold" class="icon"></a></li>
+        <li class="editor-toolbar__item"><a href="#" @click.prevent="makeItalic"><img src="/static/svg/edit-italic.svg" alt="Italic" class="icon"></a></li>
+        <li class="editor-toolbar__item"><a href="#" @click.prevent="makeStrikeThrough"><img src="/static/svg/edit-strikethrough.svg" alt="Underline" class="icon"></a></li>
+        <li class="editor-toolbar__item"><a href="#" @click.prevent="addListItem"><img src="/static/svg/edit-list.svg" alt="List" class="icon"></a></li>
+        <li class="editor-toolbar__item">
+            <a href="javascript:void(0)" class="uploader">
+                <input @change="uploadImage" accept="image/*" v-el:image type="file">
+                <img src="/static/svg/edit-image.svg" alt="Image" class="icon">
+            </a>
+        </li>
+        <li class="editor-toolbar__item" :class="{ 'editor-toolbar__item--checked': displayPreview }"><a href="#" @click.prevent="togglePreview"><img src="/static/svg/edit-preview.svg" alt="Preview" class="icon"></a></li>
+        <li class="editor-toolbar__item editor-toolbar__item--right" :class="{ 'editor-toolbar__item--selected': isLanguage('pt') }"><a href="#" @click.prevent="setLanguage('pt')">PT</a></li>
+        <li class="editor-toolbar__item editor-toolbar__item--right" :class="{ 'editor-toolbar__item--selected': isLanguage('es') }"><a href="#" @click.prevent="setLanguage('es')">ES</a></li>
+        <li class="editor-toolbar__item editor-toolbar__item--right" :class="{ 'editor-toolbar__item--selected': isLanguage('en') }"><a href="#" @click.prevent="setLanguage('en')">EN</a></li>
+    </ul>
+    <editor :model.sync="model"></editor>
+    <preview :show.sync="displayPreview" :content.sync="model" :title.sync="title"></preview>
+</div>

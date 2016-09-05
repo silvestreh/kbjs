@@ -1,0 +1,27 @@
+@import 'src/stylesheets/modules/colors';
+
+.pills {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    font-size: 0;
+
+    &__pill {
+        margin: 0;
+        font-size: 0.75rem;
+        display: inline-block;
+        margin: 0.125rem 0;
+        background-color: lighten($color-accent, 30%);
+        padding: 0.25rem 0.4rem;
+        border-radius: 0.125rem;
+        color: rgba(0, 0, 0, 0.5);
+
+        &--uncategorized {
+            background-color: lighten($status-error, 30%);
+        }
+    }
+
+    &__pill + &__pill {
+        margin-left: 0.25rem;
+    }
+}

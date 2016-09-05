@@ -1,0 +1,54 @@
+// Vendor
+@import '~normalize.css';
+@import '~toastr/toastr';
+
+// Modules
+@import 'src/stylesheets/modules/colors';
+
+// Util
+@import 'src/stylesheets/utils/utils';
+@import 'src/stylesheets/utils/transitions';
+
+// Typography
+@import 'src/stylesheets/typography/fonts/roboto';
+@import 'src/stylesheets/typography/typography';
+
+// Static Components
+@import 'src/stylesheets/static-components/button';
+@import 'src/stylesheets/static-components/editor-toolbar';
+@import 'src/stylesheets/static-components/form';
+@import 'src/stylesheets/static-components/input';
+@import 'src/stylesheets/static-components/main-toolbar';
+@import 'src/stylesheets/static-components/pills';
+@import 'src/stylesheets/static-components/table';
+
+:root {
+    font-size: 16px;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    color: $color-main;
+}
+
+body {
+    font-size: 0.95rem;
+}
+
+.wrapper {
+    @extend .clearfix;
+    padding: 0 2rem 0 1rem;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+section.animated {
+    animation-duration: 500ms;
+}
+
+main {
+    overflow: auto;
+
+    & > section {
+        padding: 0 2rem;
+    }
+}

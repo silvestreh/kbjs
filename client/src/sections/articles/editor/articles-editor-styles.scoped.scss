@@ -1,0 +1,9 @@
+@import 'src/stylesheets/modules/colors';
+
+.toolbar__item--left {
+    img {
+        background: lighten($color-main-light, 25%);
+        border-radius: 50%;
+        padding: 0.35rem;
+    }
+}

@@ -1,0 +1,60 @@
+@import "src/stylesheets/modules/colors";
+@import "~codemirror/lib/codemirror.css";
+
+$editor-background: #FBFBFB;
+$editor-color: #90A4AE;
+$editor-height: 30rem;
+
+editor {
+    display: block;
+    margin: auto;
+    border: 0.0625rem solid #F2F2F2;
+    min-height: $editor-height;
+    margin-bottom: 2rem;
+}
+.CodeMirror {
+    line-height: 2.5;
+    background-color: $editor-background;
+    color: $editor-color;
+    min-height: $editor-height;
+    font: {
+        family: 'Fira Code', 'Monaco', monospace;
+        size: 0.85rem;
+        weight: 300;
+    }
+}
+.CodeMirror-gutters {
+    min-height: 100%;
+    border-right: 0.5rem solid $editor-background;
+    padding: 0 0.5rem;
+}
+.CodeMirror-linenumber {
+    color: $editor-color;
+}
+.CodeMirror-cursor {
+    border-left: {
+        color: $color-accent;
+        width: 0.125rem;
+    }
+}
+.CodeMirror-activeline-background {
+    background-color: rgba(0,0,0,0.025);
+}
+.CodeMirror-activeline-gutter {
+    background-color: rgba(0,0,0,0.025);
+
+    .CodeMirror-linenumber {
+        color: $color-accent;
+    }
+}
+.CodeMirror-selected {
+    background: rgba(0,0,0,0.05);
+}
+.CodeMirror-focused {
+    .CodeMirror-selected {
+        background: lighten($color-accent, 18%);
+    }
+}
+.CodeMirror-lines {
+    padding: 0.25rem 0;
+}

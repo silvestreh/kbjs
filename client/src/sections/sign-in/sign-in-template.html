@@ -1,0 +1,13 @@
+<section>
+    <form class="auth">
+        <fieldset>
+            <img src="/static/svg/logo.svg" alt="KBjs Logo">
+            <legend>Sign in</legend>
+            <ul>
+                <li><input class="email" autofocus type="email" placeholder="E-mail" v-model="email"></li>
+                <li><input class="password" type="password" placeholder="Password" v-model="password"></li>
+            </ul>
+            <button :class="{ 'button--loading': loading }" @click.prevent="signIn">Sign in</button>
+        </fieldset>
+    </form>
+</section>

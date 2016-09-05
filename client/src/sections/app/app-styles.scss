@@ -1,0 +1,33 @@
+@import '~animate.css';
+@import 'src/stylesheets/modules/colors';
+
+.app-logo {
+    @extend .animated;
+    @extend .fadeInDown;
+    width: 5rem;
+    float: left;
+    margin: 1rem 1rem 0 0;
+    animation-delay: 250ms;
+    animation-duration: 500ms;
+    position: relative;
+    z-index: 1;
+}
+
+section::before {
+    @extend .animated;
+    @extend .fadeInLeft;
+    animation-duration: 500ms;
+}
+
+main {
+    @extend .animated;
+    @extend .fadeIn;
+    animation-delay: 350ms;
+}
+
+.no-data {
+    font-weight: 300;
+    color: $color-main-light;
+    text-align: center;
+    line-height: 10rem;
+}

@@ -1,0 +1,33 @@
+<section>
+    <ul class="toolbar">
+        <li class="toolbar__item"><a v-link="{ path: '/app/articles/new' }" class="button button--key">New article</a></li>
+        <li class="toolbar__search"><input type="search" placeholder="Type to search"></li>
+    </ul>
+    <table v-if="haveData">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="article in articles" :class="{ draft: article.draft }" @click="edit(article)">
+                <td><span><small v-if="article.draft">Draft</small>{{ article.title.en }}</span></td>
+                <td>
+                    <ul class="pills">
+                        <li class="pills__pill" v-for="category in article.categories">
+                            {{ category.name.en }}
+                        </li>
+                        <li class="pills__pill pills__pill--uncategorized" v-if="!article.categories.length">Uncategorized</li>
+                    </ul>
+                </td>
+                <td>
+                    {{ article.createdAt | date }}
+                    <a href="#" @click.prevent.stop="remove(article)">&#x2715;</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 v-else class="no-data">No articles found</h2>
+</section>

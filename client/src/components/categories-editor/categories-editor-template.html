@@ -1,0 +1,27 @@
+<aside class="categories-editor" v-if="show" transition="slide">
+    <h1><a href="#" @click.prevent="hide"><img src="/static/svg/arrow-left.svg" alt="Back" class="icon"></a> Categories</h1>
+    <a href="#" @click.prevent="toggleNew" :class="{ active: displayNew }" class="button button--key button--fab"><img src="/static/svg/add.svg" alt="Add category"></a>
+    <form v-if="displayNew" transition="slide">
+        <ul class="tabs tabs--small">
+            <li><a class="tabs__tab" :class="{ 'tabs__tab--active': isLanguage('en') }" href="#" @click.prevent="setLanguage('en')">English</a></li>
+            <li><a class="tabs__tab" :class="{ 'tabs__tab--active': isLanguage('es') }" href="#" @click.prevent="setLanguage('es')">Español</a></li>
+            <li><a class="tabs__tab" :class="{ 'tabs__tab--active': isLanguage('pt') }" href="#" @click.prevent="setLanguage('pt')">Portugês</a></li>
+        </ul>
+        <fieldset>
+            <ul>
+                <li><input type="text" placeholder="Category name" v-model="newCategory.name[lang]"></li>
+            </ul>
+            <button class="button--key" @click.prevent="createCategory">Create</button>
+        </fieldset>
+    </form>
+    <p>Select which categories you want to tag this post with.</p>
+    <ul class="categories">
+        <li v-for="category in categories" class="categories__category" :class="{ 'categories__category--untranslated': !category.name[lang] }">
+            <label>
+                <input v-model.sync="category.selected" type="checkbox">
+                <span v-if="category.name[lang]">{{ category.name[lang] }}</span>
+                <span v-else>{{ category.name.en }} <small>(not translated)</small></span>
+            </label>
+        </li>
+    </ul>
+</aside>

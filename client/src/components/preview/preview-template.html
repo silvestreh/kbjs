@@ -1,0 +1,7 @@
+<aside v-if="show" class="preview" transition="slide">
+    <h1 class="preview__title">{{ (title) ? title : 'Untitled' }}</h1>
+    <a class="preview__close-button" href="#" @click.prevent="hide">&#x2715;</a>
+    <div class="preview__area">
+        {{{ content | marked }}}
+    </div>
+</aside>

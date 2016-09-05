@@ -1,0 +1,82 @@
+@import 'src/stylesheets/modules/inputs-mixin';
+
+.categories-editor {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 25%;
+    background: white;
+    border-left: 0.0625rem solid #DDD;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 5rem rgba(0,0,0,0.1);
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 10000;
+
+    .button--fab {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        transition: transform 250ms;
+        will-change: transform;
+
+        &.active {
+            transform: rotateZ(135deg);
+        }
+    }
+
+    h1 {
+        margin-left: -1rem;
+    }
+
+    .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+
+    form {
+        background-color: #FAFAFA;
+        padding: 1rem 2rem 2rem;
+        margin: 0 -2rem;
+        box-shadow: inset 0 0 0.5rem rgba(0,0,0,0.05);
+        position: relative;
+
+        button {
+            position: absolute;
+            right: 2rem;
+            bottom: 2rem;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            padding-left: 1rem;
+        }
+
+        fieldset ul {
+            margin-bottom: 0;
+        }
+
+        @include inputs {
+            padding-right: 6rem;
+        }
+    }
+
+    .categories {
+        padding: 0;
+        list-style: none;
+
+        &__category {
+            padding: 1rem 0;
+
+            + li {
+                border-top: 0.0625rem solid #F2F2F2;
+            }
+
+            &--untranslated {
+                font-style: italic;
+                opacity: 0.6;
+            }
+        }
+    }
+}

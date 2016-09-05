@@ -1,0 +1,54 @@
+@import 'src/stylesheets/modules/colors';
+
+.toolbar {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+
+    &__item {
+        font-size: 0.9rem;
+        vertical-align: middle;
+
+        img {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        a {
+            display: block;
+        }
+
+        &__icon {
+            padding: 0.25rem;
+        }
+    }
+
+    &__item + &__item {
+        margin-left: 1rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 300;
+        color: $color-main;
+        flex: 1;
+        margin: 0 1rem;
+
+        input:not([type="radio"]):not([type="button"]):not([type="checkbox"]):not([type="range"]):not([type="file"]) {
+            border: none;
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            color: $color-main;
+            width: 100%;
+        }
+    }
+
+    &__search {
+        margin-left: auto;
+        font-size: 0.9rem;
+        align-self: flex-end;
+    }
+}

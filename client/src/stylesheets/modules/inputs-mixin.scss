@@ -1,0 +1,5 @@
+@mixin inputs {
+    input:not([type="radio"]):not([type="button"]):not([type="checkbox"]):not([type="range"]):not([type="file"]) {
+        @content;
+    }
+}

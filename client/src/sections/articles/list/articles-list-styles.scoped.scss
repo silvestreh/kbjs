@@ -1,0 +1,52 @@
+@import 'src/stylesheets/modules/colors';
+
+th:first-child {
+    width: 60%;
+}
+
+th:last-child {
+    width: 15%;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: #FAFAFA;
+
+    a {
+        display: block;
+    }
+
+    td:first-child span {
+        transform: translateX(1rem);
+    }
+}
+
+td:first-child span {
+    display: block;
+    transition: transform 250ms;
+    will-change: transform;
+}
+
+small {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    background-color: lighten($color-main-light, 20%);
+    color: $color-main;
+    border-radius: 0.75rem;
+    margin-right: 0.75rem;
+}
+
+.draft {
+    color: $color-main-light;
+}
+
+td a {
+    display: none;
+    color: $status-error;
+    text-decoration: none;
+    float: right;
+    margin-right: 1rem;
+}

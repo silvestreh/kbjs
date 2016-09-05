@@ -1,0 +1,28 @@
+@import 'src/stylesheets/modules/inputs-mixin';
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    legend {
+        font: {
+            size: 1.5rem;
+            weight: 300;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1rem 0;
+
+        li + li {
+            margin-top: 1rem;
+        }
+    }
+
+    @include inputs {
+        width: 100%;
+    }
+}

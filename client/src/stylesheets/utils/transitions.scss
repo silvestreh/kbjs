@@ -1,0 +1,16 @@
+@import '~animate.css';
+
+.slide-transition {
+    transition: transform 500ms;
+    transform: translateX(0);
+    will-change: transform;
+}
+
+.slide-enter, .slide-leave {
+    transform: translateX(100%);
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+}

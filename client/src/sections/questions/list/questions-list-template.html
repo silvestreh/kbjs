@@ -1,0 +1,33 @@
+<section>
+    <ul class="toolbar">
+        <li class="toolbar__item"><a v-link="{ path: '/app/questions/new' }" class="button button--key">New question</a></li>
+        <li class="toolbar__search"><input type="search" placeholder="Type to search"></li>
+    </ul>
+    <table v-if="haveData">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Category</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="question in questions" :class="{ draft: question.draft }" @click="edit(question)">
+                <td><span><small v-if="question.draft">Draft</small>{{ question.question.en }}</span></td>
+                <td>
+                    <ul class="pills">
+                        <li class="pills__pill" v-for="category in question.categories">
+                            {{ category.name.en }}
+                        </li>
+                        <li class="pills__pill pills__pill--uncategorized" v-if="!question.categories.length">Uncategorized</li>
+                    </ul>
+                </td>
+                <td>
+                    {{ question.createdAt | date }}
+                    <a href="#" @click.prevent.stop="remove(question)">&#x2715;</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h2 v-else class="no-data">No questions found</h2>
+</section>

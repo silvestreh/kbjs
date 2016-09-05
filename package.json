@@ -1,0 +1,31 @@
+{
+  "name": "kbjs",
+  "version": "0.0.0",
+  "description": "A simple Knowledge Base CMS written in JavaScript",
+  "main": "server/src",
+  "scripts": {
+    "prestart": "cd client/ && npm run build",
+    "start": "pm2 start server/src -i max --name \"kbjs\"",
+    "restart": "pm2 stop kbjs",
+    "postrestart": "npm start",
+    "deploy": "git pull origin master",
+    "postdeploy": "npm run restart",
+    "stop": "pm2 stop kbjs",
+    "fix-perms": "npm run fix-perms-prod && npm run fix-perms-qa",
+    "fix-perms-prod": "chown -R nginx:nginx /var/www/site && find /var/www/site -type d | grep -v \"\\.git\" | xargs -n 1 chmod 775",
+    "fix-perms-qa": "chown -R nginx:nginx /var/www/site-qa && find /var/www/site-qa -type d | grep -v \"\\.git\" | xargs -n 1 chmod 775"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvestreh/kbjs.git"
+  },
+  "author": "Silvestre Herrera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silvestreh/kbjs/issues"
+  },
+  "homepage": "https://github.com/silvestreh/kbjs#readme",
+  "dependencies": {
+    "pm2": "^1.1.3"
+  }
+}
