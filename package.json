@@ -10,10 +10,7 @@
     "postrestart": "npm start",
     "deploy": "git pull origin master",
     "postdeploy": "npm run restart",
-    "stop": "pm2 stop kbjs",
-    "fix-perms": "npm run fix-perms-prod && npm run fix-perms-qa",
-    "fix-perms-prod": "chown -R nginx:nginx /var/www/site && find /var/www/site -type d | grep -v \"\\.git\" | xargs -n 1 chmod 775",
-    "fix-perms-qa": "chown -R nginx:nginx /var/www/site-qa && find /var/www/site-qa -type d | grep -v \"\\.git\" | xargs -n 1 chmod 775"
+    "stop": "pm2 stop kbjs"
   },
   "repository": {
     "type": "git",
