@@ -30,7 +30,11 @@ exports.after = {
     all: [],
     find: [],
     get: [],
-    create: [],
+    create: [
+        function(hook) {
+            hook.result.imageURI = `https://${process.env.KBJS_AWS_BUCKET}.s3.amazonaws.com/${hook.result.id}`;
+        }
+    ],
     update: [],
     patch: [],
     remove: []

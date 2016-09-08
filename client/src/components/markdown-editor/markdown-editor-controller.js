@@ -4,8 +4,6 @@ import preview from 'components/preview';
 import languageMixin from 'src/mixins/language-mixin';
 import { uploadsService, } from 'src/feathers/services';
 
-const bucket = 's3_bucket';
-
 export default {
     props: [
         'model',
@@ -38,9 +36,8 @@ export default {
                 uploadsService.create({ uri: reader.result, })
                     .then((response) => {
                         const codemirror = document.querySelector('editor').cm;
-                        const url = `https://${bucket}.s3.amazonaws.com/${response.id}`;
 
-                        codemirror.replaceSelection(`![](${url})`);
+                        codemirror.replaceSelection(`![](${response.imageURI})`);
                         this.$els.image.value = '';
                         toastr.success('Uploaded!');
                     })

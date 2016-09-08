@@ -10,7 +10,7 @@
     outline: none;
     background-color: transparent;
     cursor: pointer;
-    transition: width 250ms, border-radius 250ms, background-color 250ms;
+    transition: width 1s, border-radius 1s, color 250ms;
     text: {
         transform: uppercase;
         decoration: none;
@@ -63,7 +63,14 @@
         border-color: lighten($color-main-light, 20%);
         border-left-color: $color-accent;
         animation: spin 1s linear infinite;
+        animation-delay: 250ms;
         pointer-events: none;
+        white-space: nowrap;
+
+        &:focus, &:hover {
+            border-color: lighten($color-main-light, 20%);
+            border-left-color: $color-accent;
+        }
     }
 
     &:focus, &:hover {
