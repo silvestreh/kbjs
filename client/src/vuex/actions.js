@@ -7,7 +7,7 @@ export const setLanguage = ({ dispatch, }, lang) => {
 
 // Articles
 export const fetchArticles = ({ dispatch, }, cb) => {
-    articleService.find().then((articles) => {
+    articleService.find({ paginate: false, }).then((articles) => {
         dispatch('FETCH_ARTICLES', articles.data);
         if (cb && typeof cb === 'function') cb();
     });
@@ -27,7 +27,7 @@ export const watchRemovedArticles = ({ dispatch, }) => {
 
 // Categories
 export const fetchCategories = ({ dispatch, }, cb) => {
-    categoryService.find().then((categories) => {
+    categoryService.find({ paginate: false, }).then((categories) => {
         dispatch('FETCH_CATEGORIES', categories.data);
         if (cb && typeof cb === 'function') cb();
     });
@@ -47,7 +47,7 @@ export const watchRemovedCategories = ({ dispatch, }) => {
 
 // Questions
 export const fetchQuestions = ({ dispatch, }, cb) => {
-    questionService.find().then((questions) => {
+    questionService.find({ paginate: false, }).then((questions) => {
         dispatch('FETCH_QUESTIONS', questions.data);
         if (cb && typeof cb === 'function') cb();
     });

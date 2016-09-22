@@ -86,6 +86,6 @@ export default {
 
         togglePreview() {
             this.displayPreview = !this.displayPreview;
-        }
+        },
     },
 };
