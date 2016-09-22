@@ -10,7 +10,8 @@
     "postrestart": "npm start",
     "deploy": "git pull origin master",
     "postdeploy": "npm run restart",
-    "stop": "pm2 stop kbjs"
+    "stop": "pm2 stop kbjs",
+    "logs": "pm2 logs kbjs"
   },
   "repository": {
     "type": "git",
