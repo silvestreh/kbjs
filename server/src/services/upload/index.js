@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const hooks = require('./hooks');
 const AWS = require('aws-sdk');
 const Store = require('s3-blob-store');
